@@ -26,3 +26,18 @@ li {
 	margin-bottom: 10px;
 }
 
+table {
+	margin: 0px 15px 0 15px;
+	border: thin solid black;
+}
+
+td, th {
+	border: 1px solid black;
+	text-align: center;
+	padding: 5px;
+}
+
+th {
+	background-color:  gray;
+	color: white;
+}

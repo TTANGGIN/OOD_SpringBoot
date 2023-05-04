@@ -36,3 +36,6 @@ build/
 mvnw
 mvnw.cmd
 .mvn
+*.properties
+*.properties
+ood/src/main/resources/application.properties
