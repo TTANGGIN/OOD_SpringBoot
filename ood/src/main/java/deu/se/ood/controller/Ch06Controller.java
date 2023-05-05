@@ -6,6 +6,7 @@ package deu.se.ood.controller;
 
 import deu.se.ood.model.ch06.AddrBookManager;
 import deu.se.ood.model.ch06.AddrBookRow;
+import deu.se.ood.model.ch06.HikariConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,6 +34,8 @@ public class Ch06Controller {
     private String mysqlServerPort;
     @Autowired
     private Environment env;
+    @Autowired
+    private HikariConfiguration dbConfig;
 
     @GetMapping("/ch06/showtable1")
     public String showTable1(Model model) {
@@ -85,5 +88,11 @@ public class Ch06Controller {
         model.addAttribute("dataRows", dataRows);
 
         return "redirect:/ch06/inserttable";
+    }
+
+    @GetMapping("/ch06/hikari_cp")
+    public String hikariCP(Model model) {
+        model.addAttribute("dbConfig", dbConfig);
+        return "ch06/hikari_cp/index";
     }
 }
